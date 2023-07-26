@@ -2,25 +2,25 @@
 -- https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	-- Telescope, fuzzy finding
-	-- https://github.com/nvim-telescope/telescope.nvim
-	{
-		"nvim-telescope/telescope.nvim",
+    -- Telescope, fuzzy finding
+    -- https://github.com/nvim-telescope/telescope.nvim
+    {
+        "nvim-telescope/telescope.nvim",
         branch = "0.1.x",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
 
     -- Treesitter, syntex highlighting
     -- https://github.com/nvim-treesitter/nvim-treesitter
@@ -30,9 +30,9 @@ require("lazy").setup({
         build = ":TSUpdate",
     },
 
-	-- Harpoon, jumping between files
-	-- https://github.com/ThePrimeagen/harpoon
-	"ThePrimeagen/harpoon",
+    -- Harpoon, jumping between files
+    -- https://github.com/ThePrimeagen/harpoon
+    "ThePrimeagen/harpoon",
 
     -- Undotree, undo history
     -- https://github.com/mbbill/undotree
@@ -42,34 +42,45 @@ require("lazy").setup({
     -- https://github.com/tpope/vim-fugitive
     "tpope/vim-fugitive",
 
-	-- One Dark, colour theme
-	-- https://github.com/navarasu/onedark.nvim
-	"navarasu/onedark.nvim",
+    -- One Dark, colour theme
+    -- https://github.com/navarasu/onedark.nvim
+    "navarasu/onedark.nvim",
 
-	-- Lualine, custom statusline
-	-- https://github.com/nvim-lualine/lualine.nvim
-	"nvim-lualine/lualine.nvim",
+    -- Lualine, custom statusline
+    -- https://github.com/nvim-lualine/lualine.nvim
+    "nvim-lualine/lualine.nvim",
 
     -- LSP Zero, code completion
     -- https://github.com/VonHeikemen/lsp-zero.nvim/tree/v2.x
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v2.x",
         dependencies = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
-                'williamboman/mason.nvim',
-                build = function()
-                    pcall(vim.api.nvim_command, 'MasonUpdate')
+            { "neovim/nvim-lspconfig" },
+            {
+                "williamboman/mason.nvim",
+                build = function ()
+                    pcall(vim.api.nvim_command, "MasonUpdate")
                 end,
             },
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},     -- Required
-            {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
+            { "williamboman/mason-lspconfig.nvim" },
+            { "hrsh7th/nvim-cmp" },
+            { "hrsh7th/cmp-nvim-lsp" },
+            { "L3MON4D3/LuaSnip" },
         }
     },
+
+    -- Indent Blankline, adds indent level lines
+    -- https://github.com/lukas-reineke/indent-blankline.nvim
+    "lukas-reineke/indent-blankline.nvim",
+
+    -- Git Signs, adds signs to the gutter
+    -- https://github.com/lewis6991/gitsigns.nvim
+    "lewis6991/gitsigns.nvim",
+
+    -- Comment, comment out lines
+    -- https://github.com/numToStr/Comment.nvim
+    "numToStr/Comment.nvim",
+
+
 })
