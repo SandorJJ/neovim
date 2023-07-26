@@ -20,10 +20,26 @@ require("lazy").setup({
 		"nvim-telescope/telescope.nvim", branch = "0.1.x",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+    
+    -- Treesitter, syntex highlighting
+    -- https://github.com/nvim-treesitter/nvim-treesitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+        build = ":TSUpdate",
+    },
 
 	-- Harpoon, jumping between files
 	-- https://github.com/ThePrimeagen/harpoon
 	"ThePrimeagen/harpoon",
+
+    -- Undotree, undo history
+    -- https://github.com/mbbill/undotree
+    "mbbill/undotree",
+    
+    -- Fugitive, git wrapper
+    -- https://github.com/tpope/vim-fugitive
+    "tpope/vim-fugitive",
 
 	-- One Dark, colour theme
 	-- https://github.com/navarasu/onedark.nvim
