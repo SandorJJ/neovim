@@ -82,5 +82,11 @@ require("lazy").setup({
     -- https://github.com/numToStr/Comment.nvim
     "numToStr/Comment.nvim",
 
+    -- Cmp Buffer, provides auto completion without a LSP
+    -- https://github.com/hrsh7th/cmp-buffer
+    "hrsh7th/cmp-buffer",
 
+    -- Cmp Lsp Signature Help, provides signature help
+    -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+    "hrsh7th/cmp-nvim-lsp-signature-help",
 })
