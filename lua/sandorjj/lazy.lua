@@ -89,4 +89,8 @@ require("lazy").setup({
     -- Cmp Lsp Signature Help, provides signature help
     -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
     "hrsh7th/cmp-nvim-lsp-signature-help",
+
+    -- WakaTime, provides metrics about your programming
+    -- https://github.com/wakatime/vim-wakatime
+    "wakatime/vim-wakatime",
 })
