@@ -93,4 +93,12 @@ require("lazy").setup({
     -- WakaTime, provides metrics about your programming
     -- https://github.com/wakatime/vim-wakatime
     "wakatime/vim-wakatime",
+
+    -- Vim Sleuth, automatically adjusts indentation
+    -- https://github.com/tpope/vim-sleuth
+    "tpope/vim-sleuth",
+
+    -- Neodev, improves lua lsp
+    -- https://github.com/folke/neodev.nvim
+    { "folke/neodev.nvim", opts = {} },
 })
