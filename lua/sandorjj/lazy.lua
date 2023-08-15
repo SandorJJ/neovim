@@ -66,7 +66,10 @@ require("lazy").setup({
             { "williamboman/mason-lspconfig.nvim" },
             { "hrsh7th/nvim-cmp" },
             { "hrsh7th/cmp-nvim-lsp" },
-            { "L3MON4D3/LuaSnip" },
+            {
+                "L3MON4D3/LuaSnip",
+                dependencies = { "rafamadriz/friendly-snippets" },
+            },
         }
     },
 
@@ -101,4 +104,8 @@ require("lazy").setup({
     -- Neodev, improves lua lsp
     -- https://github.com/folke/neodev.nvim
     { "folke/neodev.nvim", opts = {} },
+
+    -- Cmp Luasnip, luasnip completion engine for nvim-cmp
+    -- https://github.com/saadparwaiz1/cmp_luasnip
+    { 'saadparwaiz1/cmp_luasnip' },
 })

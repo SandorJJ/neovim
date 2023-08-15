@@ -7,7 +7,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
 end)
 
--- TEMPORARY
+-- TEMPORARY or not
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -17,12 +17,11 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
@@ -33,5 +32,8 @@ cmp.setup({
     {name = 'nvim_lsp'},
     {name = 'buffer'},
     {name = "nvim_lsp_signature_help"},
-  }
+    {name = 'luasnip'},
+    {name = 'cmp_luasnip'},
+  },
+  mapping = cmp_mappings
 })
