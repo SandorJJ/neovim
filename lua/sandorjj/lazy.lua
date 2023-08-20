@@ -107,5 +107,5 @@ require("lazy").setup({
 
     -- Cmp Luasnip, luasnip completion engine for nvim-cmp
     -- https://github.com/saadparwaiz1/cmp_luasnip
-    { 'saadparwaiz1/cmp_luasnip' },
+    "saadparwaiz1/cmp_luasnip",
 })
