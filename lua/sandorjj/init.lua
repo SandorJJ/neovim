@@ -1,2 +1,3 @@
-require("settings")
-require("remaps")
+require("sandorjj/settings")
+require("sandorjj/remaps")
+require("sandorjj/lazy")
